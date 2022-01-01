@@ -1,0 +1,18 @@
+---
+bluetooth: true
+
+desktops:
+  - bspwm
+
+x:
+  enabled: true
+  autologin: true
+
+code:
+  dir: $HOME/code
+  repos:
+    github:
+      users:
+        - simonwjackson
+      orgs:
+        - elevate-vg

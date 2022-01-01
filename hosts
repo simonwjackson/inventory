@@ -1,0 +1,24 @@
+[gaming]
+yakushi
+raiden
+
+[programming]
+workstations
+kuro
+
+[portable]
+# Change this line if you get a desktop PC
+workstations
+
+[workstation]
+fiji
+tokachi
+
+[headless]
+kuro
+
+[headsup]
+haku
+
+[endpoint]
+yari
