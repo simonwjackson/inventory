@@ -1,0 +1,108 @@
+---
+shares:
+  enabled: true
+
+docker:
+  - name: nzbget
+    image: lscr.io/linuxserver/nzbget
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Central
+    volumes:
+      - /etc/nzbget:/config
+      - /net/unzen.lan/mnt/user/downloads/nzbget:/downloads
+    ports:
+      - 6789:6789
+    restart_policy: unless-stopped
+    state: started
+
+  - name: nzbhydra2
+    image: lscr.io/linuxserver/nzbhydra2
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Central
+    volumes:
+      - /etc/nzbhydra2:/config
+      - /net/unzen.lan/mnt/user/downloads/nzbhydra2:/downloads
+    ports:
+      - 5076:5076
+    restart_policy: unless-stopped
+    state: started
+
+  - name: sonarr
+    image: lscr.io/linuxserver/sonarr
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Central
+    volumes:
+      - /etc/sonarr:/config
+      - /net/unzen.lan/mnt/user/downloads/nzbget:/downloads
+      - /net/unzen.lan/mnt/user/television:/tv
+    ports:
+      - 8989:8989
+    restart_policy: unless-stopped
+    state: started
+
+  - name: radarr
+    image: lscr.io/linuxserver/radarr
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Central
+    volumes:
+      - /etc/radarr:/config
+      - /net/unzen.lan/mnt/user/downloads/nzbget:/downloads
+      - /net/unzen.lan/mnt/user/movies:/movies
+    ports:
+      - 7878:7878
+    restart_policy: unless-stopped
+    state: started
+
+  - name: lidarr
+    image: lscr.io/linuxserver/lidarr
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Central
+    volumes:
+      - /etc/lidarr:/config
+      - /net/unzen.lan/mnt/user/music:/music
+      - /net/unzen.lan/mnt/user/downloads/nzbget:/downloads
+    ports:
+      - 8686:8686
+    restart_policy: unless-stopped
+    state: started
+
+  - name: readarr
+    image: linuxserver/readarr:nightly
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Central
+    volumes:
+      - /etc/readarr:/config
+      - /net/unzen.lan/mnt/user/books:/books
+      - /net/unzen.lan/mnt/user/downloads/nzbget:/downloads
+    ports:
+      - 8787:8787
+    restart_policy: unless-stopped
+    state: started
+
+  - name: ubooquity
+    image: lscr.io/linuxserver/ubooquity
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: America/Central
+    volumes:
+      - /etc/ubooquity:/config
+      - /net/unzen.lan/mnt/user/books:/books
+      - /net/unzen.lan/mnt/user/comics:/comics
+    ports:
+      - 2202:2202
+      - 2203:2203
+    restart_policy: unless-stopped
+    state: started

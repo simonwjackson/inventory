@@ -1,12 +1,8 @@
 ---
-bluetooth: true
+#bluetooth: true
 
 desktops:
   - bspwm
-
-x:
-  enabled: true
-  autologin: true
 
 code:
   dir: $HOME/code

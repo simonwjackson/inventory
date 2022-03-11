@@ -1,24 +1,29 @@
+iwaki ansible_host=iwaki.lan
+
 [gaming]
-yakushi
-raiden
+yakushi ansible_host=yakushi.lan
+raiden ansible_host=raiden.lan
 
 [programming]
 workstations
-kuro
 
-[portable]
-# Change this line if you get a desktop PC
-workstations
+[mobile]
+yakushi ansible_host=yakushi.lan
+kuro ansible_host=kuro.lan
 
 [workstation]
-fiji
-tokachi
+fiji ansible_host=fiji.lan
+tokachi ansible_host=tokachi.lan
 
 [headless]
-kuro
-
-[headsup]
-haku
+kuro ansible_host=kuro.lan
 
 [endpoint]
-yari
+rakko ansible_host=rakko
+kuro ansible_host=kuro.lan
+
+[router]
+rakku ansible_host=rakku
+
+[jellyfin]
+saru ansible_host=saru.lan
