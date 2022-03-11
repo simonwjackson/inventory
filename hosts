@@ -17,6 +17,10 @@ tokachi ansible_host=tokachi.lan
 
 [headless]
 kuro ansible_host=kuro.lan
+kea ansible_host=kea.lan
+
+[headsup]
+haku
 
 [endpoint]
 rakko ansible_host=rakko
