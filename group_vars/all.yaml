@@ -253,6 +253,12 @@ syncthing:
   devices:
     fiji: "MGTTAOU-67K5CAN-2AZUT6D-S2SRFHL-7GVTAIN-BJHZEVN-6WIPSMR-KGIOOAA"
     haku: "MJA2XQW-KN7TNNF-4CVKBQH-3QHHFSW-24SY5GA-DAE5LJX-R7ZFKZQ-JXQJHQP"
+    kuro: "I2UGMN5-7ZIGDVX-H522N7T-W6LAW2I-ZTK5K5H-CU6YPAE-KZUISQQ-KGIBFAH"
   shares:
     documents:
-      - fiji: "{{ user.home }}/Documents"
+      fiji: "{{ user.home }}/Documents"
+      kuro: "{{ user.home }}/Documents"
+    music:
+      fiji: "{{ user.home }}/Music"
+      kuro: "{{ user.home }}/Music"
+      haku: "{{ user.home }}/Music"
