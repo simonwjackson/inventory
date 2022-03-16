@@ -1,0 +1,16 @@
+---
+kernel: linux-rpi4
+router:
+  enabled: true
+  network: "192.18.1.1/24"
+  gateway: 192.18.1.1
+  dns: 192.18.1.1
+  dhcp:
+    range: "192.18.1.2,192.18.1.254"
+    lease: 12h
+wireguard:
+  enabled: true
+  server: true
+  port: 56789
+  private_key: ADD_HERE
+  ip: 192.18.2.1

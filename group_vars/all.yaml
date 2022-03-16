@@ -7,7 +7,7 @@ ansible_become_password: !vault |
           3231393061373936650a616438396337646331393766663662393539303338333635636630663066
           3261
 
-bluetooth: true
+bluetooth: false
 
 hibernate:
   delay_sec: 10min
@@ -15,10 +15,15 @@ hibernate:
 sleep:
   delay_sec: 10min
 
+shares:
+  enabled: false
+
+docker: []
+
 user:
   sudo: true
-  uid: 1234
-  home: /mnt/storage/simonwjackson
+  uid: 1000
+  home: /home/simonwjackson
   name: simonwjackson
   group: simonwjackson
   shell: /usr/bin/zsh
@@ -206,25 +211,26 @@ device_roles: []
 hotspot:
   enabled: false
 
+# TODO: These values are incorrect
 wireguard_peers:
   - name: kuro
-    ip: 10.0.2.1
+    ip: 192.19.1.1
     endpoint: "144.126.138.66:51820"
     public_key: "h0hmQ3g+FKBd00OJaxwoa6o2Vmjn1ImlhA4ncSwS4CE="
-  - name: tokachi
-    ip: 10.0.2.2
+  - name: ipad
+    ip: 192.18.2.11
     public_key: "KZwI/jLfB2ODgIQzMuAFL3Unu9brXqF82S9LeaC6LD4="
   - name: fiji
-    ip: 10.0.2.3
+    ip: 192.18.2.10
     public_key: "WGxj3qCZqzzmz7foeeLDGejUEnH0GRSVASF2ub0Ccyo="
   - name: raiden
-    ip: 10.0.2.4
+    ip: 192.18.2.20
     public_key: "mEx9L3KKI36sSqdA6wgtRVaJQGmT4+293FCAsQk09k0="
   - name: haku
-    ip: 10.0.2.5
+    ip: 192.19.1.14
     public_key: "TeojgfuCE+VeuYIO9W8VGg2CfYJjvClrhUDOJfwwIV0="
   - name: yari
-    ip: 10.0.2.6
+    ip: 192.18.2.6
     endpoint: "45.20.193.255:51821"
     public_key: "Xd82VamkG0yL4S12TEs8lIE5vTNken5yq7Y773k8HFk="
 

@@ -1,0 +1,6 @@
+---
+jellyfin:
+  enabled: true
+
+shares:
+  enabled: true
